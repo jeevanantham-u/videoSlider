@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <video class="slider" src="asserts/1.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+        <video class="slider" src="asserts/2.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+        <video class="slider" src="asserts/3.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+        <video class="slider" src="asserts/4.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+        <div class="navigtion">
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+    </div>
+</header>
+<script>
+    const btn = document.querySelectorAll(".btn");
+    const slider = document.querySelectorAll(".slider")
+
+    let slideUpadte = function(update){
+
+        btn.forEach((slide)=>{
+            slide.classList.remove("active");
+        });
+
+        slider.forEach((vidr)=>{
+            vidr.classList.remove("active");
+        });
+        btn[update].classList.add("active");
+        slider[update].classList.add("active");
+
+    }
+    
+    btn.forEach((btn,i) => {
+        btn.addEventListener("click",()=>{
+            slideUpadte(i);
+        });
+        
+    });
+</script>
+</body>
+</html>
